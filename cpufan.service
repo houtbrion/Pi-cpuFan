@@ -1,0 +1,12 @@
+[Unit]
+Description=cpufan
+
+[Service]
+ExecStart=/usr/local/bin/cpufan
+WorkingDirectory=/tmp
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
